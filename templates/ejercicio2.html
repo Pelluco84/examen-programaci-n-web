@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/css/estilosindex.css">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <div class="container">
+<div>
+    <h1>Inicio de sesión</h1>
+    <br>
+
+    <form method="POST">
+        <label for="usuario">Usuario:</label>
+        <br>
+        <input type="text" id="usuario" name="usuario" required>
+        <br>
+
+        <label for="contraseña">Contraseña:</label>
+        <br>
+        <input type="password" id="contraseña" name="contraseña" required>
+        <br>
+
+        <button type="submit" class="verificar">Verificar</button>
+
+
+    </form>
+
+    <div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    {% endwith %}
+    </div>
+    </div>
+</body>
+</html>
